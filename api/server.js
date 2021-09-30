@@ -25,9 +25,9 @@ server.get('/api/users', async (req, res) => {
 })
 
 //creates a user from {username, password} in the request body and responds with newly create user
-server.post('/api/users', async (req, res) => {
+server.post('/api/register', async (req, res) => {
     try {
-        const {username, password} = req.body
+        const { username, password } = req.body
 
         if(!username || !password){
             res.status(404).json({message: "must have username and password"})
@@ -42,8 +42,6 @@ server.post('/api/users', async (req, res) => {
         res.status(500).json({message: "an error occurred while trying to create a new user" })
     }
 })
-
-//checks {username, password} in the request body and responds with welcome message
 
 
 //exports
